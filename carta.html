@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mi cartita para ti</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Quicksand', sans-serif;
+      background-color: #e6ccff;
+      background-size: cover;
+      background-position: center;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    .carta {
+      max-width: 700px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .estrellita {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+}
+
+.estrella-izquierda {
+  top: 0;
+  left: 0;
+}
+
+.estrella-derecha {
+  top: 0;
+  right: 0;
+}
+
+
+    .carta h1 img {
+      max-width: 300px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .carta p {
+      font-size: 1.2em;
+      line-height: 1.8;
+    }
+
+    .gif-esquinas {
+      position: fixed;
+      width: 100px;
+      height: auto;
+      z-index: 999;
+    }
+
+    .gif-1 { top: 10px; left: 10px; }
+    .gif-2 { top: 10px; right: 10px; }
+    .gif-3 { bottom: 10px; left: 10px; }
+    .gif-4 { bottom: 10px; right: 10px; }
+
+    .boton-spotify {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 30px;
+      background-color: #1db954;
+      color: white;
+      font-size: 1.1em;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .boton-spotify:hover {
+      background-color: #1ed760;
+    }
+
+    .boton-regresar {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #9c27b0;
+      color: white;
+      font-size: 1em;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .boton-regresar:hover {
+      background-color: #ab47bc;
+    }
+
+    canvas#confetti {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Confeti -->
+  <canvas id="confetti"></canvas>
+
+  <!-- GIFs en las esquinas -->
+  <img src="https://i.pinimg.com/736x/e7/bd/7b/e7bd7b2b72274ba9756e35c8a6badd15.jpg" class="gif-esquinas gif-2" alt="GIF 2">
+  <img src="https://i.pinimg.com/736x/bc/b7/18/bcb71818f738acf637e041224733ed0a.jpg" class="gif-esquinas gif-3" alt="GIF 3">
+  <img src="https://i.pinimg.com/736x/ee/51/92/ee5192bb4e5bdd6e303e828f97531b78.jpg" class="gif-esquinas gif-4" alt="GIF 4">
+  <img src="https://i.pinimg.com/736x/73/0d/75/730d75ed729397068c7a89fa7476e305.jpg" class="gif-esquinas gif-1" alt="GIF 1">
+
+  <!-- Carta -->
+  <div class="carta">
+    <!-- Estrellitas internas -->
+   <img src="https://i.pinimg.com/736x/82/81/c9/8281c99f851958eac880b1c83acabe53.jpg" alt="Estrellita izquierda" class="estrellita estrella-izquierda">
+<img src="https://i.pinimg.com/736x/ba/cc/89/bacc89e07e1650ae9eee64cf6c816b2b.jpg" alt="Estrellita derecha" class="estrellita estrella-derecha">
+
+    <h1>
+      <img src="https://i.pinimg.com/736x/ba/80/36/ba803684078ed75dcf3b52c03a80c31a.jpg" alt="Título imagen">
+    </h1>
+
+    <p>
+      Holaaaa, posiblemente cuando te llegue esta carta ya estes dormida... <br><br>
+      Hoy es tu cumpleaños mi vida, feliz vuelta al sol,
+      gracias por estar en mi vida, gracias por ser lo que siempre he soñado. 💐✨<br><br>
+      Sé que llevamos poco tiempo de conocernos, pero es verdad cuando te digo que 
+      me enamoré de tí, tanto que ahora no imagino un futuro en el que no estés, no sé si fue el destino que se puso de acuerdo con mis ganas
+      o si simplemente llegaste en el momento perfecto, pero llegaste, y desde entonces mi vida cambio, me haces querer ser mejor como persona, construir algo bonito, algo duradero, algo contigo. <br><br>
+       Tu forma de ser, tus palabras, tu calidez con la que me tratas, todo eso me tiene aquí escribiendote con el corazón en la mano. Ojalá pudiera abrazarte en este momento, llenarte de besos y decirte lo feliz que me haces, 
+       pero por ahora esta carta viaja en mi lugar, cargada de cariño y de todos los planes que anhelo que vivamos en un futuro no muy lejano. <br><br>
+      Gracias por confiar en mi, por quedarte conmigo, si tú me lo permites quiero que este sea el primer cumpleaños de muchos que pasemos juntas, quiero ser quien te escuche, quien te cuide y acompañe en cada una de tus versiones.<br><br>
+     Y si alguna vez dudas, si el mundo se pone pesado o si algo te inquieta, prometeme que dejarás quedarme contigo, que me dejarás abrazarte y escuchar cada latido de tu corazón, abrazar tu alma y cuidar de ti como lo mereces.
+    Prometo cuidar tu corazón, no como cualquiera, sino como se cuida algo que realmente importa. <br><br>
+    Feliz cumpleaños mi amor, te mando un abrazo y te deseo un año lleno de cosas lindas y amor del bonito, amor del que no lastima y si me lo permites, quiero ser yo quien te lo de. <br><br>
+  
+      <strong>💌 te amo, y lo haré incluso en los días dificiles.</strong>
+    </p>
+
+    <!-- Botón Spotify -->
+    <a class="boton-spotify" href="https://open.spotify.com/intl-es/track/44AyOl4qVkzS48vBsbNXaC?si=6a37fb9450534602" target="_blank">
+      Escuchar esta canción para ti 🎵
+    </a>
+
+    <!-- Botón Regresar -->
+    <br>
+    <a class="boton-regresar" href="inicio.html">← Volver al inicio</a>
+  </div>
+
+  <!-- Script confeti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+    confetti({
+      particleCount: 150,
+      spread: 90,
+      origin: { y: 0.6 }
+    });
+  </script>
+
+</body>
+</html>
+
+
+

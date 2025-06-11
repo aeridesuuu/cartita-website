@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Tu carta</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Quicksand', sans-serif;
+      background-image: url('https://i.pinimg.com/736x/7a/84/66/7a8466e4d1bfa445f15c4ccc44cf5f62.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      overflow: hidden;
+    }
+
+    .contenido {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      z-index: 1;
+      position: relative;
+    }
+
+    .gif-arriba {
+      width: 200px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .boton {
+      background-color: #9c27b0;
+      color: white;
+      padding: 20px 40px;
+      border: none;
+      border-radius: 20px;
+      font-size: 1.5em;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .boton:hover {
+      background-color: #ab47bc;
+    }
+
+    #loader {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    #loader img {
+      width: 100px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .corazones {
+      font-size: 2rem;
+      color: lightgray;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .corazon.lleno {
+      color: #e91e63;
+      transition: color 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cargador con gif y corazones -->
+  <div id="loader">
+    <img src="https://i.gifer.com/YCZH.gif" alt="Cargando...">
+    <p>Cargando tu cartita... 💌</p>
+    <div class="corazones">
+      <span class="corazon">❤</span>
+      <span class="corazon">❤</span>
+      <span class="corazon">❤</span>
+      <span class="corazon">❤</span>
+      <span class="corazon">❤</span>
+    </div>
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="contenido">
+    <img src="https://i.pinimg.com/736x/96/78/ba/9678ba180ad86d4de824a0c0f1b8d515.jpg" class="gif-arriba" alt="Gif tierno">
+    <button class="boton" onclick="mostrarCarga()">Haz clic aquí para abrir tu carta 💌</button>
+  </div>
+
+  <!-- Script -->
+  <script>
+    function mostrarCarga() {
+      document.getElementById('loader').style.display = 'block';
+
+      const corazones = document.querySelectorAll('.corazon');
+      corazones.forEach((corazon, index) => {
+        setTimeout(() => {
+          corazon.classList.add('lleno');
+        }, index * 400);
+      });
+
+      setTimeout(() => {
+        window.location.href = 'carta.html';
+      }, 2500);
+    }
+  </script>
+
+</body>
+</html>
